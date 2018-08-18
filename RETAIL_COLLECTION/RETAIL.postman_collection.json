@@ -1,0 +1,102 @@
+{
+	"variables": [],
+	"info": {
+		"name": "RETAIL",
+		"_postman_id": "c20342cf-f030-f636-1481-52b4f4e3c09f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Batch Process - Send Client",
+			"request": {
+				"url": "http://localhost:1112/batchprocess/client/send",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"clientId\":\"1040\",\n\t\"clientName\":\"Katherine\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Process - Send Sale",
+			"request": {
+				"url": "http://localhost:1112/batchprocess/sale/send",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"saleId\":\"10001\",\n\t\"saleDetail\":\"Computador lenovo\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Process - Send Refund",
+			"request": {
+				"url": "http://localhost:1112/batchprocess/refund/send",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"refundId\":\"20001\",\n\t\"refundDetail\":\"Cargador portatil lenovo\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Client - Get Client",
+			"request": {
+				"url": {
+					"raw": "http://localhost:1111/client/getclient?clientIdentification=1040",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"client",
+						"getclient"
+					],
+					"query": [
+						{
+							"key": "clientIdentification",
+							"value": "1040",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
