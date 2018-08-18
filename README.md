@@ -18,3 +18,6 @@ Esta API se encarga de obtener la información del cliente de la cola "cliente_p
 
 ## Data
 La información necesaria para probar los módulos mencionados está en la carpeta RETAIL_COLLECTION donde se encuentra la colección de postman con las operaciones y los datos.
+
+## Proposed design
+![alt text](https://github.com/kathe20m/retail/blob/master/modelo%20retail/RETAIL_DESIGN.jpg)
