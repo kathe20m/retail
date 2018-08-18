@@ -12,6 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConf {
 
+    /**
+    * Configuracion de la conexion al host donde se encuentra configurado el exchange y las colas a utilizar.
+    */
     @Bean
     public ConnectionFactory connectionFactory(){
         CachingConnectionFactory connectionFactory = new CachingConnectionFactory("lion.rmq.cloudamqp.com");
@@ -25,6 +28,10 @@ public class RabbitConf {
         return connectionFactory;
     }
 
+    /**
+     * Metodo encargado de crear un template custom, el cual transforma la información en el objeto indicado, en este caso
+     * el mensaje entrante en el objecto Cliente mediante el producerJackson2MessageConverter.
+     */
     @Bean
     public RabbitTemplate rabbitTemplate() {
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory());
@@ -32,6 +39,9 @@ public class RabbitConf {
         return rabbitTemplate;
     }
 
+    /**
+     * Bean encargado de convertir el mensaje a JSON.
+     */
     @Bean
     public Jackson2JsonMessageConverter producerJackson2MessageConverter() {
         return new Jackson2JsonMessageConverter();
